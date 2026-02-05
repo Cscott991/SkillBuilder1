@@ -9,7 +9,25 @@ import java.util.Scanner;
 public class SkillBuilder1 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        //TODO : Replace this comment with your code
+
+        System.out.println("You're Jane's friend!");
+        System.out.println("\"What's your name?\"");
+        String name = input.nextLine();
+
+        System.out.println("Enter a floating-point number:");
+        double spice = input.nextDouble();
+
+// Correct expression
+        double value = Math.pow(2, 5 * Math.pow(spice, 3));
+
+        System.out.printf("Well %s, the spice value resulted in %.4f%n", name, value);
+
+// Conversion
+        int convertedInt = (int)(value * 100);
+        double converted = convertedInt / 100.0;
+
+        System.out.println("And the converted value is " + converted);
+
     }
 
     public static void calcWallPaint() {
@@ -18,18 +36,22 @@ public class SkillBuilder1 {
         final double squareFeetPerGallons = 350.0;
         final double gallonsPerCan = 1.0;
 
-        // Prompt user to input wall's width
         System.out.println("Enter wall height (feet):");
         double wallHeight = input.nextDouble();
 
-        // Prompt user to input wall's width
         System.out.println("Enter wall width (feet):");
         double wallWidth = input.nextDouble();
 
-        // TODO: Calculate and output the wall's area
+        // Calculate area
+        double area = wallHeight * wallWidth;
+        System.out.println("Wall area: " + area + " square feet");
 
-        // TODO: Calculate and output the amount of paint in gallons needed to paint the wall
+        // Gallons needed
+        double gallonsNeeded = area / squareFeetPerGallons;
+        System.out.printf("Paint needed: %.2f gallons%n", gallonsNeeded);
 
-        // TODO: Calculate and output the number of 1 gallon cans needed to paint the wall, rounded up to nearest integer
+        // Cans needed (rounded up)
+        int cansNeeded = (int)Math.ceil(gallonsNeeded);
+        System.out.println("Cans needed: " + cansNeeded + " can(s)");
     }
 }
