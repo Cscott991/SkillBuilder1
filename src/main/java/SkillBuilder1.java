@@ -18,13 +18,13 @@ public class SkillBuilder1 {
         double spice = input.nextDouble();
 
 // Correct expression
-        double value = Math.pow(2, 5 * Math.pow(spice, 3));
+        double value = (4.0 / 3.0) * Math.pow(2.0, Math.sqrt(5) / Math.pow(spice, 3.0));
 
         System.out.printf("Well %s, the spice value resulted in %.4f%n", name, value);
 
 // Conversion
-        int convertedInt = (int)(value * 100);
-        double converted = convertedInt / 100.0;
+        int truncated = (int)(value * 100);
+        double converted = truncated / 100.0;
 
         System.out.println("And the converted value is " + converted);
 
